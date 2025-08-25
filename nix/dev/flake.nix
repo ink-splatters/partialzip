@@ -3,7 +3,6 @@
 
   inputs = {
     git-hooks.url = "github:cachix/git-hooks.nix";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   nixConfig = {
