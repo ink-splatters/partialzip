@@ -2,7 +2,7 @@
   perSystem = {inputs', ...}: {
     options.rust-toolchain = lib.mkOption {
       type = lib.types.attrs;
-      default = inputs'.fenix.packages.complete.toolchain;
+      default = inputs'.fenix.packages.default.toolchain;
     };
   };
 }
