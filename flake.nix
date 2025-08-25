@@ -23,10 +23,7 @@
     ];
   };
 
-  outputs = inputs @ {
-    flake-parts,
-    ...
-  }:
+  outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} (let
       systems = import inputs.systems;
       flakeModules.default = import ./nix/flake-module.nix;
@@ -55,7 +52,6 @@
       perSystem = {
         config,
         lib,
-        pkgs,
         ...
       }: {
         options = {

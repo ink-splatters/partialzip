@@ -1,12 +1,8 @@
 {lib, ...}: {
-  perSystem = {
-    pkgs,
-    inputs',
-    ...
-  }: {
+  perSystem = {inputs', ...}: {
     options.rust-toolchain = lib.mkOption {
       type = lib.types.attrs;
-      default = inputs'.fenix.packages.minimal.toolchain;
+      default = inputs'.fenix.packages.complete.toolchain;
     };
   };
 }

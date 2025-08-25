@@ -393,7 +393,7 @@ impl io::Read for PartialReader {
         {
             let mut transfer = self.easy.transfer();
             transfer.write_function(|data| {
-                log::trace!("transfered {:x} bytes", data.len());
+                log::trace!("transferred {:x} bytes", data.len());
                 content.extend_from_slice(data);
                 Ok(data.len())
             })?;
