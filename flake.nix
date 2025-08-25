@@ -59,9 +59,10 @@
             type = lib.types.path;
           };
         };
-        config = {
+        config = with packages; {
           src = ./.;
-          packages.default = config.packages.partialzip;
+          packages.default = partialzip;
+          packages.native = partialzip-native;
         };
       };
 
