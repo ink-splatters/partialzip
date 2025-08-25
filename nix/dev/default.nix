@@ -12,16 +12,11 @@
     ...
   }: {
     formatter = pkgs.writeShellScriptBin "fmt-all" ''
-      echo "🔧 Formatting Nix files..."
+      echo "Formatting Nix files..."
       ${pkgs.alejandra}/bin/alejandra . "$@"
 
-      echo "🦀 Formatting Rust files..."
+      echo "Formatting Rust files..."
       ${config.rust-toolchain}/bin/cargo fmt --all
-
-      echo "📦 Formatting TOML files..."
-      ${pkgs.taplo}/bin/taplo fmt
-
-      echo "✅ All files formatted!"
     '';
   };
 }
